@@ -186,11 +186,7 @@ function renderProvince(doc){
         cancelButton.addEventListener('click', (e) => {
             provinceList.appendChild(li);
         })
-
-
     })
-
-    
 }
 
 

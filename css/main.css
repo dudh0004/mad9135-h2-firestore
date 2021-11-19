@@ -102,3 +102,17 @@ p {
     font-size: 2rem;
     color: rgb(21, 100, 96);
 }
+
+.cancelButton {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 90px;
+}
+
+.saveButton {
+    position: absolute;
+    top: 20px;
+    right: 120px;
+    width: 90px;
+}
