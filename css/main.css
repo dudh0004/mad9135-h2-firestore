@@ -38,15 +38,11 @@ li:nth-child(even){
 }
 
 form input{
-    float: left;
     width: 38%;
     margin: 0;
     border: 0;
     border-bottom: 1px solid #eee;
-    margin: 0 1%;
     padding: 10px;
-    display: block;
-    box-sizing: border-box;
     font-size: 18px;
 }
 
@@ -56,14 +52,9 @@ form input:focus{
     padding-bottom: 8px;
 }
 
-form:after{
-    content: '';
-    clear: both;
-    display: block;
-}
-
 button{
     border: 0;
+    font-size: 1rem;
     background: rgb(31, 128, 123);
     border-radius: 10px;
     padding: 13px;
@@ -116,3 +107,41 @@ p {
     right: 120px;
     width: 90px;
 }
+
+
+@media only screen and (max-width: 600px ) {
+    .addButton{
+        min-width: 5rem;
+        margin-left: 3rem;
+        font-size: .8rem;
+    }
+
+    form input {
+        width: 50%;
+    }
+
+    .deleteButton {
+        right: 3;
+        width: 60px;
+        font-size: .8rem;
+    }
+
+    .editButton {
+        right: 65px;
+        width: 60px;
+        font-size: .8rem;
+    }
+
+    .cancelButton {
+        right: 3;
+        width: 65px;
+        font-size: .8rem;
+    }
+
+    .saveButton {
+        right: 70px;
+        width: 65px;
+        font-size: .8rem;
+    }
+} 
+
