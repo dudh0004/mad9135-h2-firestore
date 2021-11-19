@@ -19,7 +19,7 @@ function renderCity(doc){
     li.appendChild(editButton);
     li.appendChild(deleteButton);
     cityList.appendChild(li);
-}
+};
 
 
 // saving data
@@ -73,6 +73,16 @@ function renderProvince(doc){
     provinceList.appendChild(li);
 }
 
+
+// saving data
+provinceForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    db.collection('province').add({
+        id: Math.floor(Math.random() * 100),
+        name: provinceForm.name.value
+    });
+    provinceForm.name.value = '';
+});
 
 // real-time listener for province collection
 db.collection('province').onSnapshot(snapshot => {
