@@ -22,6 +22,17 @@ function renderCity(doc){
 }
 
 
+// saving data
+cityForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    db.collection('city').add({
+        id: Math.floor(Math.random() * 100),
+        name: cityForm.name.value
+    });
+    cityForm.name.value = '';
+});
+
+
 // real-time listener for cities collection
 db.collection('city').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
