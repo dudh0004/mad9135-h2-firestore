@@ -37,15 +37,22 @@ function renderCity(doc){
         let input = document.createElement('input');
         input.classList.add('input');
         let saveButton = document.createElement('button');
+        let cancelButton = document.createElement('button');
+
 
         saveButton.textContent = 'Save';
         saveButton.classList.add('saveButton');
+        cancelButton.textContent = 'Cancel';
+        cancelButton.classList.add('cancelButton');
+
         input.defaultValue = doc.data().name;
         saveButton.setAttribute('data-id', doc.id);
 
         console.log(doc.data());
         form.appendChild(input);
         form.appendChild(saveButton);
+        form.appendChild(cancelButton);
+
         element.appendChild(form);
 
         saveButton.addEventListener('click', (e) => {
@@ -62,6 +69,11 @@ function renderCity(doc){
             li.appendChild(editButton);
             li.appendChild(deleteButton);
             element.appendChild(li);
+        })
+
+        // cancel data
+        cancelButton.addEventListener('click', (e) => {
+            cityList.appendChild(li);
         })
     })
 
@@ -136,15 +148,21 @@ function renderProvince(doc){
         let input = document.createElement('input');
         input.classList.add('input');
         let saveButton = document.createElement('button');
+        let cancelButton = document.createElement('button');
+
 
         saveButton.textContent = 'Save';
         saveButton.classList.add('saveButton');
+        cancelButton.textContent = 'Cancel';
+        cancelButton.classList.add('cancelButton');
+
         input.defaultValue = doc.data().name;
         saveButton.setAttribute('data-id', doc.id);
 
-        console.log(doc.data());
         form.appendChild(input);
         form.appendChild(saveButton);
+        form.appendChild(cancelButton);
+
         element.appendChild(form);
 
         saveButton.addEventListener('click', (e) => {
@@ -163,6 +181,12 @@ function renderProvince(doc){
             li.appendChild(deleteButton);
             element.appendChild(li);
         })
+
+        // cancel data
+        cancelButton.addEventListener('click', (e) => {
+            provinceList.appendChild(li);
+        })
+
 
     })
 
