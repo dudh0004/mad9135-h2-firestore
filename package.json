@@ -1,0 +1,22 @@
+{
+  "name": "mad9135-h2-firestore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dudh0004/mad9135-h2-firestore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dudh0004/mad9135-h2-firestore/issues"
+  },
+  "homepage": "https://dudh0004.github.io/mad9135-h2-firestore"
+}
+
+
