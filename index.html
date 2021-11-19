@@ -13,7 +13,7 @@
             <div class="city">
                 <form id="add-city-form">
                     <input type="text" name="name" placeholder="City name">
-                    <button>Add City</button>
+                    <button class="addButton">Add City</button>
                 </form>
                 <p>City-List</p>
                 <ul id="city-list">
@@ -46,7 +46,7 @@
             const db = firebase.firestore();
             db.settings({ timestampsInSnapshots: true }); 
         </script>
-        <script src="app.js"></script>
+        <script src="./js/main.js"></script>
 
     </body>
 </html>
