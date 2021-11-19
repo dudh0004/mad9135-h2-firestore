@@ -27,6 +27,45 @@ function renderCity(doc){
         db.collection('city').doc(id).delete();
     });
 
+    // Edit Data
+    editButton.addEventListener('click', (e) => {
+        let element = e.target.parentElement;
+
+        element.textContent = '';
+
+        let form = document.createElement('form');
+        let input = document.createElement('input');
+        input.classList.add('input');
+        let saveButton = document.createElement('button');
+
+        saveButton.textContent = 'Save';
+        saveButton.classList.add('saveButton');
+        input.defaultValue = doc.data().name;
+        saveButton.setAttribute('data-id', doc.id);
+
+        console.log(doc.data());
+        form.appendChild(input);
+        form.appendChild(saveButton);
+        element.appendChild(form);
+
+        saveButton.addEventListener('click', (e) => {
+            let id = e.target.getAttribute('data-id');
+            db.collection('city').doc(id).update({
+                name: input.value
+            })
+
+            element.textContent = '';
+        
+            div.textContent = input.value;
+
+            li.appendChild(div);
+            li.appendChild(editButton);
+            li.appendChild(deleteButton);
+            element.appendChild(li);
+        })
+    })
+
+
 };
 
 
@@ -86,6 +125,47 @@ function renderProvince(doc){
         let id = e.target.parentElement.getAttribute('data-id');
         db.collection('province').doc(id).delete();
     });
+
+    // Edit Data
+    editButton.addEventListener('click', (e) => {
+        let element = e.target.parentElement;
+
+        element.textContent = '';
+
+        let form = document.createElement('form');
+        let input = document.createElement('input');
+        input.classList.add('input');
+        let saveButton = document.createElement('button');
+
+        saveButton.textContent = 'Save';
+        saveButton.classList.add('saveButton');
+        input.defaultValue = doc.data().name;
+        saveButton.setAttribute('data-id', doc.id);
+
+        console.log(doc.data());
+        form.appendChild(input);
+        form.appendChild(saveButton);
+        element.appendChild(form);
+
+        saveButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            let id = e.target.getAttribute('data-id');
+            db.collection('province').doc(id).update({
+                name: input.value
+            })
+
+            element.textContent = '';
+        
+            div.textContent = input.value;
+
+            li.appendChild(div);
+            li.appendChild(editButton);
+            li.appendChild(deleteButton);
+            element.appendChild(li);
+        })
+
+    })
+
     
 }
 
