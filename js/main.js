@@ -19,6 +19,14 @@ function renderCity(doc){
     li.appendChild(editButton);
     li.appendChild(deleteButton);
     cityList.appendChild(li);
+
+    // Delete Data
+    deleteButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        let id = e.target.parentElement.getAttribute('data-id');
+        db.collection('city').doc(id).delete();
+    });
+
 };
 
 
@@ -71,6 +79,14 @@ function renderProvince(doc){
     li.appendChild(editButton);
     li.appendChild(deleteButton);
     provinceList.appendChild(li);
+
+     // Delete Data
+    deleteButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        let id = e.target.parentElement.getAttribute('data-id');
+        db.collection('province').doc(id).delete();
+    });
+    
 }
 
 
